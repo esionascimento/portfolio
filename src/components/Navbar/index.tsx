@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,10 +12,18 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { GetServerSideProps } from 'next';
+import axiosInstanceGithub from 'src/service/axiosGithub';
+
+interface IUserGithub {
+  name: string;
+  avatar_url: string;
+}
 
 const NavbarHorizontal = ({ pages, settings }) => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [userGithub, setUserGithub] = useState<IUserGithub>();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -32,18 +40,29 @@ const NavbarHorizontal = ({ pages, settings }) => {
     setAnchorElUser(null);
   };
 
+  useEffect(() => {
+    function fetchGithub() {
+      return fetch(`https://api.github.com/users/esionascimento`)
+        .then((response) => response.json())
+        .then((response) => {
+          setUserGithub(response);
+        });
+    }
+    fetchGithub();
+  }, []);
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Avatar alt="Remy Sharp" src={userGithub?.avatar_url} sx={{ width: 75, height: 75 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              ml: 1,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -52,20 +71,10 @@ const NavbarHorizontal = ({ pages, settings }) => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            {userGithub?.name}
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
+          <Box sx={{ justifyContent: 'end', display: { xs: 'flex', md: 'flex' } }}>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -91,7 +100,6 @@ const NavbarHorizontal = ({ pages, settings }) => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -108,9 +116,11 @@ const NavbarHorizontal = ({ pages, settings }) => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            {userGithub?.name}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            sx={{ flexGrow: 1, mr: 2, justifyContent: 'end', display: { xs: 'none', md: 'flex' } }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
@@ -121,7 +131,18 @@ const NavbarHorizontal = ({ pages, settings }) => {
               </Button>
             ))}
           </Box>
-
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
