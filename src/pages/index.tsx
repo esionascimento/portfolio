@@ -1,10 +1,14 @@
+import * as React from 'react';
 import NavbarHorizontal from 'src/components/Navbar';
-import { settings, pages } from 'src/config/navbar';
+import { pages } from 'src/config/navbar';
+import { Welcome } from 'src/sections/home';
 
 const Home = () => {
   return (
     <>
-      <NavbarHorizontal pages={pages} settings={settings} />
+      <NavbarHorizontal pages={pages} />
+
+      <Welcome />
     </>
   );
 };
