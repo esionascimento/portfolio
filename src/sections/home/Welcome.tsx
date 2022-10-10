@@ -1,7 +1,7 @@
-import { Box, Card, Container, Paper, styled } from '@mui/material';
+import { Box, Card, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import Image from 'next/image';
-import React from 'react';
+import { configWelcome } from 'src/config/navbar';
 
 const Welcome = () => {
   return (
@@ -45,7 +45,17 @@ const Welcome = () => {
                 alignItems: 'center',
               }}
             >
-              <p>Olá</p>
+              <Typography variant="h2" gutterBottom>
+                Olá, Mundo!
+              </Typography>
+              {configWelcome?.map((data) => (
+                <Box display={'flex'}>
+                  {data?.icon}
+                  <Typography variant="subtitle1" gutterBottom>
+                    {data.text}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Card>
         </Grid>
