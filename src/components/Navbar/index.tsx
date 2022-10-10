@@ -53,7 +53,7 @@ const NavbarHorizontal = ({ pages }) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Avatar alt="Remy Sharp" src={userGithub?.avatar_url} sx={{ width: 75, height: 75 }} />
+          <Avatar alt="Remy Sharp" src={userGithub?.avatar_url} sx={{ width: 50, height: 50 }} />
           <Typography
             variant="h6"
             noWrap
