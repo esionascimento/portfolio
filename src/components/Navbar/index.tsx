@@ -20,7 +20,7 @@ interface IUserGithub {
   avatar_url: string;
 }
 
-const NavbarHorizontal = ({ pages, settings }) => {
+const NavbarHorizontal = ({ pages }) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const [userGithub, setUserGithub] = useState<IUserGithub>();
@@ -41,12 +41,10 @@ const NavbarHorizontal = ({ pages, settings }) => {
   };
 
   useEffect(() => {
-    function fetchGithub() {
-      return fetch(`https://api.github.com/users/esionascimento`)
-        .then((response) => response.json())
-        .then((response) => {
-          setUserGithub(response);
-        });
+    async function fetchGithub() {
+      const response = await fetch(`https://api.github.com/users/esionascimento`);
+      const response_1 = await response.json();
+      setUserGithub(response_1);
     }
     fetchGithub();
   }, []);
