@@ -6,6 +6,7 @@ import {
   ThemeProvider as MUIThemeProvider,
   StyledEngineProvider,
 } from '@mui/material/styles';
+import breakpoints from './breakpoints';
 
 type Props = {
   children: ReactNode;
@@ -44,6 +45,7 @@ export default function ThemeProvider({ children }: Props) {
         background: { paper: COLOR[800], default: COLOR[900] },
         action: { active: COLOR[500] },
       },
+      breakpoints,
       typography,
     }),
     [isDark]
