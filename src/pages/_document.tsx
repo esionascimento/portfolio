@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
         <Head>
           <title>Esio Nascimento</title>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="/favicon.webp" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
