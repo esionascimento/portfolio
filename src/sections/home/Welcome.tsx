@@ -69,8 +69,8 @@ const Welcome = () => {
                   flexDirection: 'column',
                 }}
               >
-                {configWelcome?.map((data) => (
-                  <Box display={'flex'}>
+                {configWelcome?.map((data, index: number) => (
+                  <Box key={index} display={'flex'}>
                     {data?.icon}
                     <Typography variant={data?.sx?.variant} gutterBottom>
                       {data.text}
@@ -103,8 +103,8 @@ const Welcome = () => {
                   alignItems: 'center',
                 }}
               >
-                {configWelcome?.map((data) => (
-                  <Box display={'flex'}>
+                {configWelcome?.map((data, index: number) => (
+                  <Box key={index} display={'flex'}>
                     {data?.icon}
                     <Typography variant={data?.sx?.variant} gutterBottom>
                       {data.text}

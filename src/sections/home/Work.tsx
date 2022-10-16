@@ -32,9 +32,9 @@ const Work = (props) => {
 
       <Container maxWidth={false}>
         <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 2 }} sx={{ mt: 3 }}>
-          {configCardWork?.map((data) => {
+          {configCardWork?.map((data, index: number) => {
             return (
-              <Grid xs={12} sm={6} md={4}>
+              <Grid key={index} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
                     display: 'flex',
@@ -82,9 +82,15 @@ const Work = (props) => {
                       </Typography>
                       <Box sx={{ b: 0 }}>
                         <Stack direction="row" sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                          {data?.chip.map((chip) => {
-                            console.log('chip: ', chip);
-                            return <Chip label={chip} variant="outlined" sx={{ mr: 1, mt: 1 }} />;
+                          {data?.chip.map((chip, index: number) => {
+                            return (
+                              <Chip
+                                key={index}
+                                label={chip}
+                                variant="outlined"
+                                sx={{ mr: 1, mt: 1 }}
+                              />
+                            );
                           })}
                         </Stack>
                       </Box>
