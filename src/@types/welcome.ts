@@ -5,3 +5,16 @@ export type TypesWelcome = {
   };
   icon?: any;
 };
+
+export type TypesWelcomeRedes = {
+  text: string;
+  href: string;
+  sx: {
+    button?: any;
+    typography?: any;
+    variant?: 'h6' | 'subtitle1';
+    display?: any;
+  };
+  icon?: any;
+  renderCustom: any;
+};
