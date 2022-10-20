@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { Box, Card, Container, styled, Typography } from '@mui/material';
+import { Box, Button, Card, Container, styled, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import Image from 'next/image';
 import { configWelcome } from 'src/config/navbar';
 import { motion } from 'framer-motion';
 import { MotionImage } from 'src/components/Motion/Image';
+import { configWelcomeRedes } from 'src/config/home/Body';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
@@ -24,8 +27,18 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 //   },
 // }));
 
+const renderComponent = (data) => {
+  if (data?.renderCustom) return data?.renderCustom?.(data);
+  return <Box></Box>;
+};
+
 const Welcome = () => {
+  const { push } = useRouter();
   const [isInView, setIsInView] = useState(false);
+
+  const handleClickItemRede = (href: string) => {
+    push(href);
+  };
 
   return (
     <Container maxWidth="lg">
@@ -77,18 +90,27 @@ const Welcome = () => {
                     </Typography>
                   </Box>
                 ))}
+                {configWelcomeRedes?.map((data, index: number) => (
+                  <Box key={index} display={'flex'}>
+                    {data?.icon}
+                    <Typography variant={data?.sx?.variant} gutterBottom>
+                      {data.text}
+                    </Typography>
+                  </Box>
+                ))}
               </Box>
             </Box>
           </Card>
         </Grid>
         <Grid xs={12} md={8}>
-          {/* display: { xs: 'none', xp: 'flex', sm: 'flex', md: 'none' }, */}
           <Card
-            sx={{ py: 2, px: 3, height: '100%', display: { xs: 'block', xp: 'none', md: 'block' } }}
+            sx={{ py: 2, px: 3, height: '100%', display: { xs: 'flex', xp: 'none', md: 'flex' } }}
           >
             <Box
               sx={{
-                display: { xs: 'block', xp: 'none', md: 'block' },
+                display: { xs: 'flex', xp: 'none', md: 'flex' },
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}
             >
               <Box
@@ -110,6 +132,15 @@ const Welcome = () => {
                       {data.text}
                     </Typography>
                   </Box>
+                ))}
+              </Box>
+              <Box display={'flex'} sx={{ justifyContent: 'space-between' }}>
+                {configWelcomeRedes?.map((data, index: number) => (
+                  <Link key={index} href={data?.href} passHref>
+                    <a style={{ textDecoration: 'none' }} target="_blank">
+                      {renderComponent(data)}
+                    </a>
+                  </Link>
                 ))}
               </Box>
             </Box>
