@@ -1,15 +1,17 @@
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { TypesWelcomeRedes } from 'src/@types/welcome';
+import { TypesWelcome, TypesWelcomeRedes } from 'src/@types';
 import { Button, Typography } from '@mui/material';
+import WorkIcon from '@mui/icons-material/Work';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export const configCardWork = [
   {
-    title: 'Repositório',
+    title: 'Este Portifólio',
     text: 'Projeto criado com NextJS, Material UI, TypeScript',
     chip: ['ReactJS', 'NextJS', 'TypeScript'],
-    image: '/image/foodnas.webp',
+    image: '',
     reposity: 'https://github.com/esionascimento/portfolio',
   },
   {
@@ -76,7 +78,6 @@ export const configWelcomeRedes: TypesWelcomeRedes[] = [
       },
     },
     renderCustom: (data) => {
-      console.log('data: ', data);
       return (
         <Button sx={{ ...data?.sx?.button }}>
           {data?.icon}
@@ -111,5 +112,23 @@ export const configWelcomeRedes: TypesWelcomeRedes[] = [
         </Button>
       );
     },
+  },
+];
+
+export const configWelcome: TypesWelcome[] = [
+  { text: 'Olá, Mundo!', sx: { variant: 'h6' } },
+  {
+    text: 'Desenvolvedor Full Stack',
+    icon: <WorkIcon sx={{ mr: 1 }} />,
+    sx: { variant: 'subtitle1' },
+  },
+  {
+    text: 'Porto Velho - RO',
+    icon: <LocationOnIcon sx={{ mr: 1 }} />,
+    sx: { variant: 'subtitle1' },
+  },
+  {
+    text: 'Sou um desenvolvedor de software autodidata e muito dedicado com experiência na construção de sites e APIs Rest.',
+    sx: { variant: 'subtitle1' },
   },
 ];
