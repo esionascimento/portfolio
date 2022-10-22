@@ -96,8 +96,8 @@ const NavbarHorizontal = ({ pages }) => {
             }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{page}</Typography>
+              <MenuItem key={page?.text} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page?.text}</Typography>
               </MenuItem>
             ))}
           </Menu>
@@ -124,11 +124,12 @@ const NavbarHorizontal = ({ pages }) => {
         >
           {pages.map((page) => (
             <Button
-              key={page}
+              key={page?.text}
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'white', display: 'block' }}
+              href={page?.href}
             >
-              {page}
+              {page?.text}
             </Button>
           ))}
         </Box>
