@@ -18,3 +18,8 @@ export type TypesWelcomeRedes = {
   icon?: any;
   renderCustom: any;
 };
+
+export type TypesConfigNavbar = {
+  text: string;
+  href: string;
+};
