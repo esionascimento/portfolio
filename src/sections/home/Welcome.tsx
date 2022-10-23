@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Box, Button, Card, Container, styled, Typography } from '@mui/material';
+import { Box, Button, Card, Container, styled, Toolbar, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import Image from 'next/image';
-import { configWelcome } from 'src/config/navbar';
 import { motion } from 'framer-motion';
 import { MotionImage } from 'src/components/Motion/Image';
-import { configWelcomeRedes } from 'src/config/home/Body';
+import { configWelcome, configWelcomeRedes } from 'src/config/home/Body';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -41,7 +40,8 @@ const Welcome = () => {
   };
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" id="home">
+      <Toolbar id="back-to-top-anchor" />
       <Grid container columnSpacing={{ xs: 2, sm: 4, md: 4 }} sx={{ mt: 5 }}>
         <Grid xs={12} md={4}>
           <Card sx={{ py: 2, px: 3, height: '100%' }}>
