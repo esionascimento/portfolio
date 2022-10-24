@@ -15,7 +15,6 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 import Grid from '@mui/material/Unstable_Grid2';
-import { configWelcome } from 'src/config/navbar';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { configCardWork } from 'src/config/home/Body';
 import Link from 'next/link';
@@ -23,8 +22,9 @@ import { MotionImage } from 'src/components/Motion/Image';
 
 const Work = (props) => {
   return (
-    <Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
+    <Box id="portfolio">
+      <Toolbar id="back-to-top-anchor" />
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
         <Typography variant="h3" component="h2" gutterBottom>
           {'portfólio'.toUpperCase()}
         </Typography>
