@@ -44,10 +44,11 @@ const Home = (props: any) => {
   return (
     <>
       <NavbarHorizontal pages={configTabs} />
-      <Toolbar id="back-to-top-anchor" />
+      {/* <Toolbar id="back-to-top-anchor" /> */}
       <Welcome />
-
-      <Work />
+      <Box>
+        <Work />
+      </Box>
 
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
