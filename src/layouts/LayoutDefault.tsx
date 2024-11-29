@@ -1,11 +1,11 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Link, Toolbar, Typography } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 const LayoutDefault = () => {
   return (
     <>
       <AppBar
-        position="static"
+        position="fixed"
         sx={{ backgroundColor: '#000' }}
       >
         <Toolbar>
@@ -16,31 +16,43 @@ const LayoutDefault = () => {
             Nascimento
           </Typography>
           <Box>
-            <Button
-              color="inherit"
-              sx={{ marginLeft: 2 }}
+            <Link href="/#home">
+              <Button
+                color="inherit"
+                sx={{ marginLeft: 2 }}
+              >
+                Home
+              </Button>
+            </Link>
+            <Link href="/#sobre-mim">
+              <Button
+                color="inherit"
+                sx={{ marginLeft: 2 }}
+              >
+                Sobre mim
+              </Button>
+            </Link>
+            <Link href="/#projetos">
+              <Button
+                color="inherit"
+                sx={{ marginLeft: 2 }}
+              >
+                Projetos
+              </Button>
+            </Link>
+            <a
+              target="_blank"
+              href="https://api.whatsapp.com/send/?phone=5569992577460&text=Olá&type=phone_number&app_absent=0"
             >
-              Home
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginLeft: 2 }}
-            >
-              Sobre mim
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginLeft: 2 }}
-            >
-              Projetos
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{ marginLeft: 2 }}
-            >
-              Vamos conversar
-            </Button>
+              <Button
+                id="button-vamos-conversar"
+                variant="contained"
+                color="primary"
+                sx={{ marginLeft: 2 }}
+              >
+                Vamos conversar
+              </Button>
+            </a>
           </Box>
         </Toolbar>
       </AppBar>
