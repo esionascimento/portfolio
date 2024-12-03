@@ -2,6 +2,7 @@ import { Box, Button, Grid2, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import { Chips } from '../components/Chips';
 
@@ -72,47 +73,81 @@ export const AboutMeSection = () => {
             <Grid2 size={{ xs: 6, sm: 4 }}>
               <Typography fontWeight="bold">Mídias sociais</Typography>
               <Box>
-                <Button
-                  size="small"
-                  sx={{
-                    backgroundColor: '#0077b5',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    width: '30px',
-                    height: '30px',
-                    minWidth: '30px',
-                    marginRight: '0.5rem',
-                  }}
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/esionascimento/"
                 >
-                  <LinkedInIcon />
-                </Button>
-                <Button
-                  size="small"
-                  sx={{
-                    backgroundColor: '#7289DA',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    width: '30px',
-                    height: '30px',
-                    minWidth: '30px',
-                    marginRight: '0.5rem',
-                  }}
+                  <Button
+                    size="small"
+                    sx={{
+                      backgroundColor: '#0077b5',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      width: '30px',
+                      height: '30px',
+                      minWidth: '30px',
+                      marginRight: '0.5rem',
+                    }}
+                  >
+                    <LinkedInIcon />
+                  </Button>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/nascimentoesio.dev/"
                 >
-                  <InstagramIcon />
-                </Button>
-                <Button
-                  size="small"
-                  sx={{
-                    backgroundColor: '#25D366',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    width: '30px',
-                    height: '30px',
-                    minWidth: '30px',
-                  }}
+                  <Button
+                    size="small"
+                    sx={{
+                      backgroundColor: '#7289DA',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      width: '30px',
+                      height: '30px',
+                      minWidth: '30px',
+                      marginRight: '0.5rem',
+                    }}
+                  >
+                    <InstagramIcon />
+                  </Button>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://github.com/esionascimento"
                 >
-                  <WhatsAppIcon />
-                </Button>
+                  <Button
+                    size="small"
+                    sx={{
+                      backgroundColor: '#7289DA',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      width: '30px',
+                      height: '30px',
+                      minWidth: '30px',
+                      marginRight: '0.5rem',
+                    }}
+                  >
+                    <GitHubIcon />
+                  </Button>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://api.whatsapp.com/send/?phone=5569992577460&text=Olá&type=phone_number&app_absent=0"
+                >
+                  <Button
+                    size="small"
+                    sx={{
+                      backgroundColor: '#25D366',
+                      color: '#fff',
+                      borderRadius: '50%',
+                      width: '30px',
+                      height: '30px',
+                      minWidth: '30px',
+                    }}
+                  >
+                    <WhatsAppIcon />
+                  </Button>
+                </a>
               </Box>
             </Grid2>
           </Grid2>
