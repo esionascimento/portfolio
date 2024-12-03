@@ -4,7 +4,15 @@ export const HomeSection = () => {
   return (
     <>
       <Box
-        sx={{ fontFamily: 'Roboto, sans-serif', minHeight: '100vh', backgroundColor: '#111', color: '#fff' }}
+        id="box-root-home"
+        sx={{
+          fontFamily: 'Roboto, sans-serif',
+          minHeight: '100vh',
+          backgroundColor: '#111',
+          color: '#fff',
+
+          alignContent: 'center',
+        }}
       >
         <Container
           maxWidth="lg"
@@ -12,7 +20,6 @@ export const HomeSection = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginTop: 5,
             padding: 3,
             background: 'linear-gradient(135deg, #FFA726, #AB47BC)',
             borderRadius: 2,
@@ -42,19 +49,30 @@ export const HomeSection = () => {
               e conectar-me a profissionais experientes para aprender e colaborar.
             </Typography>
             <Box sx={{ marginTop: 3 }}>
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{ marginRight: 2 }}
+              <a
+                target="_blank"
+                href="https://api.whatsapp.com/send/?phone=5569992577460&text=Olá&type=phone_number&app_absent=0"
               >
-                me contrate
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
+                <Button
+                  id="button-me-contrate"
+                  variant="contained"
+                  color="primary"
+                  sx={{ marginRight: 2 }}
+                >
+                  me contrate
+                </Button>
+              </a>
+              <a
+                href="/src/assets/profile.pdf"
+                download={'esio-nascimento-curriculum-vitae.pdf'}
               >
-                Download CV
-              </Button>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                >
+                  Download CV
+                </Button>
+              </a>
             </Box>
           </Box>
 
