@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Typography, Button, Card, CardContent, CardMedia, Stack, Link, Grid2 } from '@mui/material';
 import { Favorite, Visibility } from '@mui/icons-material';
-import { Chips } from '../components/Chips';
-import Img from 'src/assets/home/projects/consumo-combustivel.jpeg';
+
+import ImgConsumoCombustivel from 'src/assets/home/projects/consumo-combustivel.jpeg';
 import ImgAgendaTelefonica from 'src/assets/home/projects/agenda-telefonica.webp';
+import { Chips } from '../components/Chips';
 
 export const ProjectsShowcaseSection: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
           container
           spacing={1}
         >
-          <Grid2 size={{ xs: 12, md: 10 }}>
+          <Grid2 size={{ xs: 12, sm: 8, md: 9.5 }}>
             <CardContent
               sx={{
                 flex: 1,
@@ -93,10 +94,10 @@ export const ProjectsShowcaseSection: React.FC = () => {
               </Link>
             </CardContent>
           </Grid2>
-          <Grid2 size={{ xs: 12, md: 2 }}>
+          <Grid2 size={{ xs: 12, sm: 4, md: 2.5 }}>
             <CardMedia
               component="img"
-              image={Img}
+              image={ImgConsumoCombustivel}
               alt="Project Image"
               sx={{ width: '100%', objectFit: 'cover' }}
             />
