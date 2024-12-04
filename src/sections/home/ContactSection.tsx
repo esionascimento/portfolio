@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Button, Grid2, Typography, Stack, Container } from '@mui/material';
 import { Phone, Email } from '@mui/icons-material';
 
+interface IUserGithub {
+  name: string;
+  avatar_url: string;
+}
+
 export const ContactSection: React.FC = () => {
+  const [userGithub, setUserGithub] = useState<IUserGithub>();
+
+  useEffect(() => {
+    async function fetchGithub() {
+      const response = await fetch(`https://api.github.com/users/esionascimento`);
+      const response_1 = await response.json();
+      setUserGithub(response_1);
+    }
+    fetchGithub();
+  }, []);
+
   return (
     <Box sx={{ backgroundColor: '#0a0a0a', color: '#fff', padding: '4rem 1rem', position: 'relative' }}>
       <Container maxWidth="lg">
@@ -19,19 +35,24 @@ export const ContactSection: React.FC = () => {
             >
               Tem um projeto em mente? <br /> Vamos trabalhar.
             </Typography>
-            <Button
-              variant="contained"
-              color="secondary"
-              sx={{
-                textTransform: 'none',
-                borderRadius: '30px',
-                padding: '0.8rem 2rem',
-                fontWeight: 'bold',
-                fontSize: '1rem',
-              }}
+            <a
+              target="_blank"
+              href={`https://api.whatsapp.com/send/?phone=5569992577460&text=Olá! 👋 Vi que você é desenvolvedor e estou interessado nos seus serviços.&type=phone_number&app_absent=0`}
             >
-              Diga Olá
-            </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  textTransform: 'none',
+                  borderRadius: '30px',
+                  padding: '0.8rem 2rem',
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                }}
+              >
+                Diga Olá
+              </Button>
+            </a>
           </Grid2>
 
           <Grid2
@@ -40,9 +61,9 @@ export const ContactSection: React.FC = () => {
             justifyContent="center"
           >
             <img
-              src="https://via.placeholder.com/300x300"
+              src={userGithub?.avatar_url}
               alt="Pessoa com laptop"
-              style={{ maxWidth: '100%', borderRadius: '10px' }}
+              style={{ borderRadius: '10px', height: '200px', width: '200px' }}
             />
           </Grid2>
         </Grid2>
