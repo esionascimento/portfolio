@@ -67,7 +67,7 @@ export const HomeSection = () => {
                 download={'esio-nascimento-curriculum-vitae.pdf'}
               >
                 <Button
-                  variant="outlined"
+                  variant="contained"
                   color="primary"
                 >
                   Download CV
