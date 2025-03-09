@@ -32,7 +32,7 @@ export function AccordionsHinos() {
                   component="span"
                   sx={{ width: '80%', flexShrink: 0 }}
                 >
-                  {vl.titulo}
+                  {index + 1}. {vl.titulo}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
