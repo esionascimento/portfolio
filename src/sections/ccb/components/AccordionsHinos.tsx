@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { dataAccordion } from './datasetAccordion';
+import { dataAccordionHinos } from './datasetAccordionHinos';
 
 export function AccordionsHinos() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -16,7 +16,7 @@ export function AccordionsHinos() {
 
   return (
     <div>
-      {dataAccordion?.map((vl, index) => {
+      {dataAccordionHinos?.map((vl, index) => {
         return (
           <>
             <Accordion
