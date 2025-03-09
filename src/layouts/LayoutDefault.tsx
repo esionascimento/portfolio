@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Link, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Box, Button, Link, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 const LayoutDefault = () => {
@@ -13,12 +13,11 @@ const LayoutDefault = () => {
           sx={{ backgroundColor: '#000' }}
         >
           <Toolbar>
-            <Typography
-              variant="h6"
-              sx={{ flexGrow: 1 }}
-            >
-              Nascimento
-            </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+              <Link href="/">
+                <Button color="inherit">Nascimento</Button>
+              </Link>
+            </Box>
             <Box>
               <Link href="/#home">
                 <Button
