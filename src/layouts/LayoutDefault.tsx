@@ -1,7 +1,11 @@
+import { ReactNode } from 'react';
 import { AppBar, Box, Button, Link, Toolbar, useMediaQuery, useTheme } from '@mui/material';
-import { Outlet } from 'react-router-dom';
 
-const LayoutDefault = () => {
+interface LayoutProps {
+  children?: ReactNode;
+}
+
+const LayoutDefault = ({ children }: LayoutProps) => {
   const theme = useTheme();
   const smUp = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -61,7 +65,7 @@ const LayoutDefault = () => {
         </AppBar>
       )}
 
-      <Outlet />
+      {children}
     </>
   );
 };
