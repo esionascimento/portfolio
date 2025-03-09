@@ -1,10 +1,25 @@
-import type { Theme } from '@mui/material/styles/createTheme';
+import { useMemo } from 'react';
+import type { Theme, ThemeOptions } from '@mui/material/styles/createTheme';
 import { createTheme as createMuiTheme } from '@mui/material/styles';
 
-import { createOptions as createBaseOptions } from './base/create-options';
+import ComponentsOverrides from './overrides';
+import palette from './palette';
 
 export const createTheme = (): Theme => {
-  let theme = createMuiTheme(createBaseOptions());
+  const themeMode: any = 'dark';
+  const isLight = themeMode === 'light';
+
+  const themeOptions: ThemeOptions = useMemo(
+    () => ({
+      palette: isLight ? palette.light : palette.dark,
+      shape: { borderRadius: 8 },
+    }),
+    [isLight],
+  );
+
+  const theme = createMuiTheme(themeOptions);
+
+  theme.components = ComponentsOverrides(theme);
 
   return theme;
 };
