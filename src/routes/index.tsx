@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import LayoutDefault from 'src/layouts/LayoutDefault';
 const HomePage = lazy(() => import('src/pages/index'));
 const PageCcb = lazy(() => import('src/pages/ccb'));
+const Error404Page = lazy(() => import('src/pages/404'));
 
 export const routes: RouteObject[] = [
   {
@@ -23,5 +24,9 @@ export const routes: RouteObject[] = [
         element: <PageCcb />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <Error404Page />,
   },
 ];
