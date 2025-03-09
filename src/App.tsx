@@ -1,33 +1,20 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
-// import PageHome from './pages';
-import LayoutDefault from './layouts/LayoutDefault';
 import { createTheme } from './theme';
+import { routes } from './routes';
 import './App.css';
-import PageCcb from './pages/ccb';
 
 function App() {
   const theme = createTheme();
+
+  const element = useRoutes(routes);
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <BrowserRouter>
-          <Routes>
-            <Route element={<LayoutDefault />}>
-              <Route
-                path="/"
-                element={<PageCcb />}
-              />
-              <Route
-                path="/ccb"
-                element={<PageCcb />}
-              />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        {element}
       </ThemeProvider>
     </>
   );
