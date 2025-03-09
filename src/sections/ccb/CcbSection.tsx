@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import { ControlledAccordions } from './components/Accordions';
+import { AccordionsHinos } from './components/AccordionsHinos';
 
 export const HomeSection = () => {
   return (
@@ -15,7 +15,7 @@ export const HomeSection = () => {
         }}
       >
         <Container maxWidth="md">
-          <ControlledAccordions />
+          <AccordionsHinos />
         </Container>
       </Box>
     </>
