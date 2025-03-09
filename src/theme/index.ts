@@ -6,7 +6,7 @@ import ComponentsOverrides from './overrides';
 import palette from './palette';
 
 export const createTheme = (): Theme => {
-  const themeMode: any = 'dark';
+  const themeMode: any = 'light';
   const isLight = themeMode === 'light';
 
   const themeOptions: ThemeOptions = useMemo(
