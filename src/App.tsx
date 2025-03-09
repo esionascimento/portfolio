@@ -5,6 +5,7 @@ import PageHome from './pages';
 import LayoutDefault from './layouts/LayoutDefault';
 import { createTheme } from './theme';
 import './App.css';
+import PageCcb from './pages/ccb';
 
 function App() {
   const theme = createTheme();
@@ -19,6 +20,10 @@ function App() {
               <Route
                 path="/"
                 element={<PageHome />}
+              />
+              <Route
+                path="/ccb"
+                element={<PageCcb />}
               />
             </Route>
           </Routes>
