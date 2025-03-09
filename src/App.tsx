@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
-import PageHome from './pages';
+// import PageHome from './pages';
 import LayoutDefault from './layouts/LayoutDefault';
 import { createTheme } from './theme';
 import './App.css';
@@ -19,7 +19,7 @@ function App() {
             <Route element={<LayoutDefault />}>
               <Route
                 path="/"
-                element={<PageHome />}
+                element={<PageCcb />}
               />
               <Route
                 path="/ccb"
