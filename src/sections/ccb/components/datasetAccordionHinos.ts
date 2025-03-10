@@ -1,6 +1,8 @@
 export const dataAccordionHinos = [
   {
+    id: 1,
     titulo: 'Passarinho Que Gostava de Cantar',
+    linkYoutube: 'https://www.youtube-nocookie.com/embed/WGSh3g5u0XA',
     hino: [
       'Existia um passarinho',
       'Que gostava de cantar',
@@ -53,7 +55,9 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 2,
     titulo: 'Exemplo de Obra',
+    linkYoutube: 'https://www.youtube-nocookie.com/embed/qpMGp2CZ-yw',
     hino: [
       'Sempre orando e buscando nosso Deus',
       'Caminhando e vivendo pela fé',
@@ -131,7 +135,9 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 3,
     titulo: 'Na Face Um Sorriso',
+    linkYoutube: 'https://www.youtube-nocookie.com/embed/hNi3FbBQiok',
     hino: [
       'Na face um sorriso, tentando ocultar',
       'A angústia da alma, a vontade de chorar',
@@ -153,6 +159,7 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 4,
     titulo: 'Ninguém É Mais Feliz Que Nós',
     hino: [
       'Mesmo que os anos passem, até mesmo',
@@ -198,6 +205,7 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 5,
     titulo: 'Deus Olha Para Mim',
     hino: [
       'Era madrugada Deus te viu orar',
@@ -243,6 +251,7 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 6,
     titulo: 'Você é Especial',
     hino: [
       'O que se perde pelo ar é folha e pó',
@@ -310,6 +319,7 @@ export const dataAccordionHinos = [
     ],
   },
   {
+    id: 7,
     titulo: 'Cana trilhada',
     hino: [
       'Há momentos tão difíceis',
