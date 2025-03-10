@@ -1,11 +1,11 @@
 import { Box, Container } from '@mui/material';
 import { AccordionsHinos } from './components/AccordionsHinos';
 
-export const HomeSection = () => {
+export const CcbSection = () => {
   return (
     <>
       <Box
-        id="box-root-home"
+        id="box-root-ccb"
         sx={{
           fontFamily: 'Roboto, sans-serif',
           minHeight: '100vh',
@@ -14,7 +14,7 @@ export const HomeSection = () => {
           pt: 10,
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <AccordionsHinos />
         </Container>
       </Box>
