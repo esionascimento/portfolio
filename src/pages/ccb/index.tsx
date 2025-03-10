@@ -1,9 +1,9 @@
-import { HomeSection } from 'src/sections/ccb/CcbSection';
+import { CcbSection } from 'src/sections/ccb/CcbSection';
 
 export default function PageCcb() {
   return (
     <div id="ccb-page">
-      <HomeSection />
+      <CcbSection />
     </div>
   );
 }
