@@ -1,4 +1,5 @@
 import passarinho from '../../../../public/audios/passarinho-que-gostava-de-cantar-lavinia.mp3';
+import obra from '../../../assets/audios/exemplo-da-obra-rick-nascimento.mp3';
 
 export const dataAccordionHinos = [
   {
@@ -61,7 +62,7 @@ export const dataAccordionHinos = [
     id: 2,
     titulo: 'Exemplo de Obra',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/qpMGp2CZ-yw',
-    audio: '../../../../public/audios/exemplo-da-obra-rick-nascimento.mp3',
+    audio: obra,
     hino: [
       'Sempre orando e buscando nosso Deus',
       'Caminhando e vivendo pela fé',
