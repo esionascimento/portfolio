@@ -1,9 +1,11 @@
+import passarinho from '../../../../public/audios/passarinho-que-gostava-de-cantar-lavinia.mp3';
+
 export const dataAccordionHinos = [
   {
     id: 1,
     titulo: 'Passarinho Que Gostava de Cantar',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/WGSh3g5u0XA',
-    audio: '../../../../public/audios/passarinho-que-gostava-de-cantar-lavinia.mp3',
+    audio: passarinho,
     hino: [
       'Existia um passarinho',
       'Que gostava de cantar',
