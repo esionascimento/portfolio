@@ -3,7 +3,7 @@ export const dataAccordionHinos = [
     id: 1,
     titulo: 'Passarinho Que Gostava de Cantar',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/WGSh3g5u0XA',
-    audio: 'src/sections/ccb/utils/audios/passarinho-que-gostava-de-cantar-lavinia.mp3',
+    audio: 'public/audios/passarinho-que-gostava-de-cantar-lavinia.mp3',
     hino: [
       'Existia um passarinho',
       'Que gostava de cantar',
@@ -59,7 +59,7 @@ export const dataAccordionHinos = [
     id: 2,
     titulo: 'Exemplo de Obra',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/qpMGp2CZ-yw',
-    audio: 'src/sections/ccb/utils/audios/exemplo-da-obra-rick-nascimento.mp3',
+    audio: 'public/audios/exemplo-da-obra-rick-nascimento.mp3',
     hino: [
       'Sempre orando e buscando nosso Deus',
       'Caminhando e vivendo pela fé',
@@ -140,7 +140,7 @@ export const dataAccordionHinos = [
     id: 3,
     titulo: 'Na Face Um Sorriso',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/Yk7425DkMtM',
-    audio: 'src/sections/ccb/utils/audios/na-face-um-sorriso-emaiara.mp3',
+    audio: 'public/audios/na-face-um-sorriso-emaiara.mp3',
     hino: [
       'Na face um sorriso, tentando ocultar',
       'A angústia da alma, a vontade de chorar',
@@ -165,7 +165,7 @@ export const dataAccordionHinos = [
     id: 4,
     titulo: 'Ninguém É Mais Feliz Que Nós',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/OA-Ak-E0Wp8',
-    audio: 'src/sections/ccb/utils/audios/ninguem-e-mais-feliz-que-nos-sirley-valdecir.mp3',
+    audio: 'public/audios/ninguem-e-mais-feliz-que-nos-sirley-valdecir.mp3',
     hino: [
       'Mesmo que os anos passem, até mesmo',
       'A distância nos separe, ficarão dentro de mim',
@@ -213,7 +213,7 @@ export const dataAccordionHinos = [
     id: 5,
     titulo: 'Deus Olha Para Mim',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/jT5GGGYM0JM',
-    audio: 'src/sections/ccb/utils/audios/Deus-olha-pra-mim-thayslaine.mp3',
+    audio: 'public/audios/Deus-olha-pra-mim-thayslaine.mp3',
     hino: [
       'Era madrugada Deus te viu orar',
       'Angustiado com vontade de chorar',
@@ -261,7 +261,7 @@ export const dataAccordionHinos = [
     id: 6,
     titulo: 'Você é Especial',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/GUE9H1G6h6I',
-    audio: 'src/sections/ccb/utils/audios/voce-e-especial-luana-dias.mp3',
+    audio: 'public/audios/voce-e-especial-luana-dias.mp3',
     hino: [
       'O que se perde pelo ar é folha e pó',
       'O que não serve pra usar, vagueia só',
@@ -331,7 +331,7 @@ export const dataAccordionHinos = [
     id: 7,
     titulo: 'Cana trilhada',
     linkYoutube: 'https://www.youtube-nocookie.com/embed/BDyViQoGAgM',
-    audio: 'src/sections/ccb/utils/audios/cana-trilhada-janaina.mp3',
+    audio: 'public/audios/cana-trilhada-janaina.mp3',
     hino: [
       'Há momentos tão difíceis',
       'Não consegue acreditar',
