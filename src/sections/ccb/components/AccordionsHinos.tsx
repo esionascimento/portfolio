@@ -20,14 +20,6 @@ export function AccordionsHinos() {
     setExpanded(isExpanded ? panel : false);
   };
 
-  useEffect(() => {
-    return () => {
-      if (currentAudio) {
-        currentAudio.pause();
-      }
-    };
-  }, [currentAudio]);
-
   const renderVideo = useCallback(
     (linkVideo: string) => {
       return (
@@ -53,10 +45,11 @@ export function AccordionsHinos() {
     if (currentAudio && playingHino === hinoId) {
       if (isPlaying) {
         currentAudio.pause();
+        setIsPlaying(false);
       } else {
-        currentAudio.play();
+        currentAudio.play().catch((e) => console.error('Erro ao tocar áudio:', e));
+        setIsPlaying(true);
       }
-      setIsPlaying(!isPlaying);
     } else {
       if (currentAudio) {
         currentAudio.pause();
@@ -64,7 +57,9 @@ export function AccordionsHinos() {
       }
 
       const newAudio = new Audio(audioSrc);
-      newAudio.play();
+      newAudio.load(); // Garante que o áudio está pronto para tocar
+      newAudio.play().catch((e) => console.error('Erro ao tocar áudio:', e));
+
       setCurrentAudio(newAudio);
       setPlayingHino(hinoId);
       setIsPlaying(true);
@@ -79,6 +74,14 @@ export function AccordionsHinos() {
     setSelect(dataAccordionHinos.find((vl) => vl.id === hinoId));
   };
 
+  useEffect(() => {
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+    };
+  }, [currentAudio]);
+
   return (
     <Box>
       <Grid2
@@ -88,8 +91,7 @@ export function AccordionsHinos() {
         <Grid2 size={{ xs: 12 }}>
           {select && (
             <button onClick={() => playHino(select?.id || 0, select.audio!)}>
-              {playingHino === select?.id && currentAudio && !currentAudio.paused ? '⏸️ Pausar' : '▶️ Tocar'}{' '}
-              {select?.titulo}
+              {playingHino === select.id && isPlaying ? '⏸️ Pausar' : '▶️ Tocar'} {select.titulo}
             </button>
           )}
         </Grid2>
@@ -118,10 +120,7 @@ export function AccordionsHinos() {
                   </AccordionSummary>
                   <AccordionDetails>
                     <button onClick={() => playHino(vl.id, vl.audio!)}>
-                      {playingHino === vl.id && currentAudio && !currentAudio.paused
-                        ? '⏸️ Pausar'
-                        : '▶️ Tocar'}{' '}
-                      {vl.titulo}
+                      {playingHino === vl.id && isPlaying ? '⏸️ Pausar' : '▶️ Tocar'} {vl.titulo}
                     </button>
                     {vl?.hino?.map((trecho) => {
                       if (!trecho) {
