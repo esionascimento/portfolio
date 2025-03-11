@@ -45,11 +45,10 @@ export function AccordionsHinos() {
     if (currentAudio && playingHino === hinoId) {
       if (isPlaying) {
         currentAudio.pause();
-        setIsPlaying(false);
       } else {
         currentAudio.play().catch((e) => console.error('Erro ao tocar áudio:', e));
-        setIsPlaying(true);
       }
+      setIsPlaying(!isPlaying);
     } else {
       if (currentAudio) {
         currentAudio.pause();
@@ -57,18 +56,20 @@ export function AccordionsHinos() {
       }
 
       const newAudio = new Audio(audioSrc);
-      newAudio.load(); // Garante que o áudio está pronto para tocar
-      newAudio.play().catch((e) => console.error('Erro ao tocar áudio:', e));
-
+      newAudio.load();
       setCurrentAudio(newAudio);
       setPlayingHino(hinoId);
       setIsPlaying(true);
+
+      newAudio.play().catch((e) => console.error('Erro ao tocar áudio:', e));
 
       newAudio.onpause = () => setIsPlaying(false);
       newAudio.onended = () => {
         setIsPlaying(false);
         setPlayingHino(null);
       };
+
+      newAudio.onplay = () => setIsPlaying(true);
     }
 
     setSelect(dataAccordionHinos.find((vl) => vl.id === hinoId));
