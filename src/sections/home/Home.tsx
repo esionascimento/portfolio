@@ -1,6 +1,9 @@
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 export const HomeSection = () => {
+  const theme = useTheme();
+  const smUp = useMediaQuery(theme.breakpoints.up('sm'));
+
   return (
     <>
       <Box
@@ -10,7 +13,9 @@ export const HomeSection = () => {
           minHeight: '100vh',
           backgroundColor: '#111',
           color: '#fff',
-
+          ...{
+            marginTop: smUp ? 0 : '50px',
+          },
           alignContent: 'center',
         }}
       >
@@ -27,13 +32,13 @@ export const HomeSection = () => {
         >
           <Box>
             <Typography
-              variant="h4"
+              variant={smUp ? 'h4' : 'h6'}
               gutterBottom
             >
               Olá! Eu sou Esio Nascimento
             </Typography>
             <Typography
-              variant="h2"
+              variant={smUp ? 'h2' : 'h4'}
               fontWeight="bold"
               gutterBottom
             >
